@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+//style
+import './App.css'
+//hooks
+import { useState } from 'react'
+
+//components
+import { Container, Row, Col, Button } from 'react-bootstrap'
+import GameStart from './components/GameStart'
+import Game from './components/Game'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [showQuestions, setShowQuestions] = useState(false)
+	const [difficulty, setDifficulty] = useState('medium')
+	const [url, setUrl] = useState('')
+
+	//function to get url and to show questions
+	const handleStart = difficulty => {
+		setUrl(
+			`https://opentdb.com/api.php?amount=5&difficulty=${difficulty}&type=multiple`
+		)
+		setShowQuestions(true)
+	}
+	//function to choose and set difficulty
+	const handleDifficulty = e => {
+		setDifficulty(e.target.innerText.toLowerCase())
+	}
+
+	return (
+		<Container fluid className='App'>
+			{!showQuestions && (
+				<Container fluid className='start-page'>
+					<GameStart handleDifficulty={handleDifficulty} />
+					<Row className='justify-content-center game-start'>
+						<Col className='start-game'>
+							<Button
+								className='start-game-btn'
+								onClick={() => handleStart(difficulty)}>
+								Start quiz
+							</Button>
+						</Col>
+					</Row>
+				</Container>
+			)}
+			{showQuestions && (
+				<Container fluid className='game-page'>
+					<Row>
+						<Col className='title '>Quizzicle</Col>
+					</Row>
+					<Game url={url} />
+				</Container>
+			)}
+		</Container>
+	)
 }
 
-export default App;
+export default App

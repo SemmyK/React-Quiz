@@ -1,38 +1,119 @@
 .App {
-  text-align: center;
+	text-align: center;
+	margin: 2em auto;
+	color: rgb(99, 223, 249);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.start-page {
+	background-color: rgba(0, 0, 0, 0.5);
+	width: 50% !important;
+	border-radius: 10px;
+	padding: 2em;
+	margin: 10% auto;
+}
+.mainContainer {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	margin: 3em 0 !important;
+	text-align: left;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.game-page {
+	background: url('./assets/quiz-background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+	box-sizing: border-box;
+	padding: 2em 0;
+	color: #2b2f9d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.game {
+	margin: auto;
+	border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+	font-size: 2em;
+	font-family: 'Inter', 'Noto Sans', sans-serif;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#difficulty {
+	padding: 2em;
+	margin: auto;
+	border: 1px solid rgb(99, 223, 249);
+	border-radius: 10px;
+}
+
+#text {
+	margin-bottom: 1em;
+}
+
+.btns {
+	width: 80%;
+	margin: 1em auto;
+	padding: 0;
+}
+
+.start-game-btn {
+	margin: 2em auto;
+}
+
+.loading {
+	display: flex;
+	align-items: center;
+	color: blue;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	font-size: 1.5em;
+	font-weight: 500;
+}
+
+.spinner {
+	justify-self: center;
+}
+.question-box {
+	margin-bottom: 1em;
+}
+.question {
+	margin-bottom: 1em;
+	font-weight: 500;
+	font-size: 1.2em;
+}
+.answer {
+	padding: 0;
+	margin: 0;
+}
+
+.buttons {
+	width: 200px;
+	margin: 0.5em 0;
+}
+
+.results {
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 2em auto !important;
+	width: 50%;
+	font-weight: 800;
+	color: rgb(99, 223, 249);
+	font-size: 1.2em;
+}
+
+.results div {
+	justify-self: center;
+	margin: 0;
+	padding: 0;
+}
+.btn {
+	font-weight: bold;
 }
