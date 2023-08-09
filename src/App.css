@@ -1,7 +1,9 @@
 .App {
+
 	text-align: center;
 	margin: 2em auto;
 	color: rgb(99, 223, 249);
+	box-sizing: border-box;
 }
 
 .start-page {
